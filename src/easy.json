@@ -1,0 +1,52 @@
+[
+  {
+    "options": ["Varšava", "Praha", "Berlín"],
+    "question": "Hlavné mesto Polska?",
+    "correctAnswer": "Varšava"
+  },
+  {
+    "options": ["Minsk", "Budapešť", "Bratislava"],
+    "question": "Hlavné mesto Nemecka?",
+    "correctAnswer": "Berlín"
+  },
+  {
+    "options": ["Helsinki", "Oslo", "Kyjev"],
+    "question": "Hlavné mesto Fínska?",
+    "correctAnswer": "Helsinki"
+  },
+  {
+    "options": ["Dublin", "Brusel", "Paríž"],
+    "question": "Hlavné mesto Francúzska?",
+    "correctAnswer": "Paríž"
+  },
+  {
+    "options": ["Londýn", "Kodaň", "Monako"],
+    "question": "Hlavné mesto Dánska?",
+    "correctAnswer": "Kodaň"
+  },
+  {
+    "options": ["Dublin", "Rím", "Luxemburg"],
+    "question": "Hlavné mesto Írska?",
+    "correctAnswer": "Dublin"
+  },
+  {
+    "options": ["Barcelóna", "Lisabon", "Madrid"],
+    "question": "Hlavné mesto Španielska?",
+    "correctAnswer": ""
+  },
+  {
+    "options": ["San Maríno", "Skopje", "Belehrad"],
+    "question": "Hlavné mesto Srbska?",
+    "correctAnswer": "Belehrad"
+  },
+  {
+    "options": ["Atény", "Podgorica", "Vilnius"],
+    "question": "Hlavné mesto Grécka?",
+    "correctAnswer": "Atény"
+  },
+  {
+    "options": ["Bern", "Štokholm", "Sofia"],
+    "question": "Hlavné mesto Bulharska?",
+    "correctAnswer": "Sofia"
+  }
+]
