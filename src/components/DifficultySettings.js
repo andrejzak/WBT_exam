@@ -1,7 +1,7 @@
 import React from "react";
-import { DifficultyType, useStoreContext } from "./StoreContext";
+import { DifficultyType, useStoreContext } from "./../common/store.context";
 
-function DifficultySettings() {
+const DifficultySettings = () => {
   const { difficulty, setDifficulty } = useStoreContext();
 
   return (
@@ -29,6 +29,6 @@ function DifficultySettings() {
       </button>
     </div>
   );
-}
+};
 
 export default DifficultySettings;

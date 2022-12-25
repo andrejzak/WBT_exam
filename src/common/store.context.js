@@ -5,7 +5,7 @@ export const DifficultyType = {
   Hard: "hard",
 };
 
-export const StoreContext = createContext({
+const StoreContext = createContext({
   difficulty: DifficultyType.Easy,
   setDifficulty: () => {},
   currentLevel: 0,
@@ -14,7 +14,7 @@ export const StoreContext = createContext({
   setScore: () => {},
 });
 
-const StoreProvider = ({ children }) => {
+export const StoreProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState(DifficultyType.Easy);
   const [currentLevel, setCurrentLevel] = useState(1);
   const [score, setScore] = useState(0);
@@ -35,8 +35,4 @@ const StoreProvider = ({ children }) => {
   );
 };
 
-export const useStoreContext = () => {
-  return useContext(StoreContext);
-};
-
-export default StoreProvider;
+export const useStoreContext = () => useContext(StoreContext);

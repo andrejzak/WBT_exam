@@ -3,7 +3,7 @@ import shuffleList from "shuffle-list";
 import easyGameSetup from "./../data/easy.json";
 import hardGameSetup from "./../data/hard.json";
 import Option from "../components/Option";
-import { DifficultyType, useStoreContext } from "../components/StoreContext";
+import { DifficultyType, useStoreContext } from "./../common/store.context";
 
 const shuffleLevels = (levels) => {
   return shuffleList(levels);
@@ -12,13 +12,7 @@ const shuffleLevels = (levels) => {
 const Game = () => {
   const { difficulty, currentLevel, setCurrentLevel } = useStoreContext();
   const [metadata, setMetadata] = useState({});
-  const [levels, setLevels] = useState([
-    {
-      options: ["Varšava", "Praha", "Berlín"],
-      question: "Hlavné mesto Polska?",
-      correctAnswer: "Varšava",
-    },
-  ]);
+  const [levels, setLevels] = useState();
 
   useEffect(() => {
     if (difficulty === DifficultyType.Easy) {
