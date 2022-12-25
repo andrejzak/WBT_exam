@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-// fake data generator
-const getItems = (count) =>
-  Array.from({ length: count }, (v, k) => k).map((k) => ({
-    id: k.toString(),
-    content: `item ${k}`,
-  }));
-
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -39,16 +32,12 @@ const getListStyle = (isDraggingOver) => ({
   minHeight: 150,
 });
 
-const Option = () => {
-  const [items, setItems] = useState(getItems(10));
+const Answer = ({ initOptions }) => {
+  const [options, setOptions] = useState();
 
   useEffect(() => {
-    // to sth only once - in the beginning
+    setOptions(initOptions);
   }, []);
-
-  useEffect(() => {
-    // check correct answer
-  }, [items]);
 
   const onDragEnd = (result) => {
     // dropped outside the list
@@ -58,42 +47,46 @@ const Option = () => {
     }
 
     if (result.destination.droppableId !== result.source.droppableId) {
-      const newItems = items.filter(
+      const newItems = options.filter(
         (item) => item.key === result.source.draggableId
       );
-      setItems(newItems);
+      setOptions(newItems);
       return;
     }
 
     const reorderedItems = reorder(
-      items,
+      options,
       result.source.index,
       result.destination.index
     );
-    setItems(reorderedItems);
+    setOptions(reorderedItems);
   };
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
-      <Droppable droppableId="droppable2">
+      <Droppable droppableId="answerArea">
         {(provided, snapshot) => (
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            style={getListStyle(snapshot.isDraggingOver)}
+            style={{
+              ...getListStyle(snapshot.isDraggingOver),
+              minHeight: "200px",
+              backgroundColor: "purple",
+            }}
           >
             Mnam
           </div>
         )}
       </Droppable>
-      <Droppable droppableId="droppable">
+      <Droppable droppableId="optionArea">
         {(provided, snapshot) => (
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
             style={getListStyle(snapshot.isDraggingOver)}
           >
-            {items.map((item, index) => (
+            {options.map((item, index) => (
               <Draggable key={item.id} draggableId={item.id} index={index}>
                 {(provided, snapshot) => (
                   <div
@@ -118,4 +111,4 @@ const Option = () => {
   );
 };
 
-export default Option;
+export default Answer;
