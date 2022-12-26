@@ -12,8 +12,8 @@ const shuffleLevels = (levels) => {
 };
 
 const Game = () => {
-  const { difficulty, currentLevel, setCurrentLevel, metadata, setMetadata, hp, setHp, answer } = useStoreContext();
-  const [levels, setLevels] = useState();
+  const { difficulty, currentLevel, setCurrentLevel, levels, setLevels, hp, setHp, answer, setAnswer, isNewGame, setIsNewGame } = useStoreContext();
+  const [metadata, setMetadata] = useState({ data: easyGameSetup });
 
   useEffect(() => {
     if (difficulty === DifficultyType.Easy) {
@@ -36,18 +36,14 @@ const Game = () => {
   };
 
   const checkAnswer = (answer) => {
-    if (answer !== "" && answer === metadata.data[currentLevel].correctAnswer) {
+    if (answer !== "" && answer === levels[currentLevel].correctAnswer) {
       nextLevel();
-    } else if (answer !== "" && answer !== metadata.data[currentLevel].correctAnswer) {
+    } else if (answer !== "" && answer !== levels[currentLevel].correctAnswer) {
       if (hp === 0) {
         return;
       }
       setHp(hp - 1);
     }
-  };
-
-  const onDropHandler = () => {
-    console.log("correct");
   };
 
   return (
@@ -62,7 +58,7 @@ const Game = () => {
           />
         </div>
       </header>
-      {metadata.data && <Card question={metadata.data[currentLevel].question} options={metadata.data[currentLevel].options} />}
+      {levels && <Card question={levels[currentLevel].question} options={levels[currentLevel].options} />}
     </div>
   );
 };
