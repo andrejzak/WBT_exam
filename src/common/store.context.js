@@ -12,12 +12,23 @@ const StoreContext = createContext({
   setCurrentLevel: () => {},
   score: 0,
   setScore: () => {},
+  metadata: {
+    data: 0
+  },
+  setMetadata: () => {},
+  hp: 0,
+  setHp: () => { },
+  answer: '',
+  setAnswer: () => {}
 });
 
 export const StoreProvider = ({ children }) => {
   const [difficulty, setDifficulty] = useState(DifficultyType.Easy);
-  const [currentLevel, setCurrentLevel] = useState(1);
+  const [currentLevel, setCurrentLevel] = useState(0);
   const [score, setScore] = useState(0);
+  const [metadata, setMetadata] = useState({ data: 0 });
+  const [hp, setHp] = useState(3);
+  const [answer, setAnswer] = useState('');
 
   return (
     <StoreContext.Provider
@@ -28,6 +39,12 @@ export const StoreProvider = ({ children }) => {
         setCurrentLevel,
         score,
         setScore,
+        metadata,
+        setMetadata,
+        hp,
+        setHp,
+        answer,
+        setAnswer
       }}
     >
       {children}

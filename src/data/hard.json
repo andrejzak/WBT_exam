@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "options": ["Dakar", "Bagdad", "Banjul"],
+    "question": "Hlavné mesto Iraku?",
+    "correctAnswer": "Bagdad"
+  },
+  {
+    "options": ["Podgorica", "Tallinn", "Tirana"],
+    "question": "Hlavné mesto  Čiernej Hory?",
+    "correctAnswer": "Podgorica"
+  },
+  {
+    "options": ["Victoria", "Ulanbátar", "Nikózia"],
+    "question": "Hlavné mesto Seychely?",
+    "correctAnswer": "Victoria"
+  },
+  {
+    "options": ["Hanoj", "Chartúm", "Maskat"],
+    "question": "Hlavné mesto Ománu?",
+    "correctAnswer": "Maskat"
+  },
+  {
+    "options": ["Nikózia", "Port Luis", "Roseau"],
+    "question": "Hlavné mesto Cyprusu?",
+    "correctAnswer": "Nikózia"
+  },
+  {
+    "options": ["Abuja", "Garapan", "Guatemala"],
+    "question": "Hlavné mesto Nigérie?",
+    "correctAnswer": "Abuja"
+  },
+  {
+    "options": ["San José", "Rabat", "Lima"],
+    "question": "Hlavné mesto Peru?",
+    "correctAnswer": "Lima"
+  },
+  {
+    "options": ["Male", "Moroni", "Ulanbátar"],
+    "question": "Hlavné mesto Mongolska?",
+    "correctAnswer": "Ulanbátar"
+  },
+  {
+    "options": ["Lusaka", "Garapan", "Dušanbe"],
+    "question": "Hlavné mesto Zambie?",
+    "correctAnswer": "Lusaka"
+  },
+  {
+    "options": ["Manila", "Jerevan", "Astana"],
+    "question": "Hlavné mesto Kazachstanu?",
+    "correctAnswer": "Astana"
+  }
+]

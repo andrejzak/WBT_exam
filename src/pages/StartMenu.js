@@ -1,17 +1,16 @@
 import React from "react";
 import Button from "../components/Button";
 import DifficultySettings from "../components/DifficultySettings";
-import worldMap from "../images/world_map.png";
+import goldMapImage from "../images/gold_map.png";
 
 function StartMenu() {
-  
   return (
     <div>
       <header className="grid justify-items-center py-4">
         <h1 className="font-bold text-white text-3xl">Capital quiz</h1>
         <img
           className="w-11/12 max-w-3xl pt-4"
-          src={worldMap}
+          src={goldMapImage}
           alt="Mapa sveta"
         />
       </header>

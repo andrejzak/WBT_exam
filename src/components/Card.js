@@ -1,11 +1,11 @@
-import Answer from "./Answer";
+import Answers from "./Answers";
 import Question from "./Question";
 
 const Card = ({ question, options }) => {
   return (
-    <div>
-      <Question />
-      <Answer />
+    <div className="grid justify-center">
+      <Question question={question} />
+      <Answers initOptions={options} />
     </div>
   );
 };

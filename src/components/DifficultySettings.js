@@ -18,7 +18,7 @@ const DifficultySettings = () => {
         Ľahká
       </button>
       <button
-        onMouseUp={(e) => setDifficulty(DifficultyType.Hard)}
+        onMouseUp={() => setDifficulty(DifficultyType.Hard)}
         className={
           difficulty === DifficultyType.Hard
             ? " box-border border-2 border-red-600 w-36 difficulty-button font-bold cursor-pointer px-6 py-2 rounded-md text-white"

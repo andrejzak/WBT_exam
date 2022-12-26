@@ -5,7 +5,7 @@
     "correctAnswer": "Varšava"
   },
   {
-    "options": ["Minsk", "Budapešť", "Bratislava"],
+    "options": ["Berlín", "Budapešť", "Bratislava"],
     "question": "Hlavné mesto Nemecka?",
     "correctAnswer": "Berlín"
   },
@@ -32,7 +32,7 @@
   {
     "options": ["Barcelóna", "Lisabon", "Madrid"],
     "question": "Hlavné mesto Španielska?",
-    "correctAnswer": ""
+    "correctAnswer": "Madrid"
   },
   {
     "options": ["San Maríno", "Skopje", "Belehrad"],
