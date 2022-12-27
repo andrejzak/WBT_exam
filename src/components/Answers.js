@@ -33,7 +33,7 @@ const Answers = ({ initOptions }) => {
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className={snapshot.isDraggingOver ? "flex text-white bg-blue-700 h-14 items-center justify-center align-middle border border-blue-400 rounded-md w-60 mb-4"
+            className={snapshot.isDraggingOver ? "flex text-white bg-blue-200 h-14 items-center justify-center align-middle border border-blue-400 rounded-md w-60 mb-4"
               : "flex text-white h-14 items-center justify-center align-middle border border-blue-400 rounded-md w-60 mb-4"}
           >
             {provided.placeholder}

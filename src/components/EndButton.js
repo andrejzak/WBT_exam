@@ -1,13 +1,9 @@
 import React from 'react';
 
 const EndButton = () => {
-  const clickHandler = () => {
-    window.close();
-  };
-
   return (
     <button
-      onClick={clickHandler}
+      onMouseUp={() => {window.close()}}
       className="blue-button"
     >
       Koniec

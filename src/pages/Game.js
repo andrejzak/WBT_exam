@@ -12,7 +12,7 @@ const shuffleLevels = (levels) => {
 };
 
 const Game = () => {
-  const { difficulty, currentLevel, setCurrentLevel, levels, setLevels, hp, setHp, answer, setAnswer, isNewGame, setIsNewGame } = useStoreContext();
+  const { difficulty, currentLevel, setCurrentLevel, levels, setLevels, hp, setHp, answer, setAnswer } = useStoreContext();
   const [metadata, setMetadata] = useState({ data: easyGameSetup });
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Game = () => {
   }, [metadata.data]);
 
   useEffect(() => {
-    checkAnswer(answer)
+    checkAnswer(answer);
   }, [answer]);
 
   const nextLevel = () => {

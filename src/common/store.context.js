@@ -17,7 +17,9 @@ const StoreContext = createContext({
   hp: 0,
   setHp: () => { },
   answer: '',
-  setAnswer: () => { }
+  setAnswer: () => { },
+  wasContinueClicked: 0,
+  setWasContinueClicked: () => {}
 });
 
 export const StoreProvider = ({ children }) => {
@@ -27,6 +29,7 @@ export const StoreProvider = ({ children }) => {
   const [levels, setLevels] = useState(0);
   const [hp, setHp] = useState(3);
   const [answer, setAnswer] = useState('');
+  const [wasContinueClicked, setWasContinueClicked] = useState(false);
 
   return (
     <StoreContext.Provider
@@ -42,7 +45,9 @@ export const StoreProvider = ({ children }) => {
         hp,
         setHp,
         answer,
-        setAnswer
+        setAnswer,
+        wasContinueClicked,
+        setWasContinueClicked
       }}
     >
       {children}

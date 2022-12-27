@@ -3,6 +3,7 @@ import Button from '../components/Button';
 import coffeeImage from '../images/coffee.png';
 import EndButton from '../components/EndButton';
 import NewGameButton from '../components/NewGameButton';
+import ContinueButton from '../components/ContinueButton';
 
 const GameOptions = () => {
   return (
@@ -13,7 +14,7 @@ const GameOptions = () => {
           alt='Obrázok kávy'
         />       
        <div className='grid gap-6 justify-center'>
-          <Button path="/game" name="Pokračovať" styles="blue-button" />
+          <ContinueButton />
           <NewGameButton />
           <EndButton />
         </div>

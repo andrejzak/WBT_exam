@@ -16,7 +16,7 @@ const NewGameButton = () => {
   return (
     <Link
       to="/"
-      onClick={resetGameHandler}
+      onMouseUp={resetGameHandler}
       className="blue-button"
     >
       Nová hra
