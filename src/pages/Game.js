@@ -3,9 +3,11 @@ import { useStoreContext } from "./../common/store.context";
 import Card from "../components/Card";
 import colorfulMapImage from "../images/colorful_map.png";
 import GameBar from "../components/GameBar";
+import { useNavigate } from "react-router-dom";
 
 const Game = () => {
   const { currentLevel, setCurrentLevel, levels, hp, setHp, answer, setAnswer } = useStoreContext();
+  const navigate = useNavigate();
 
   useEffect(() => {
     checkAnswer(answer);
@@ -19,8 +21,10 @@ const Game = () => {
     if (answer !== "" && answer === levels[currentLevel].correctAnswer) {
       nextLevel();
     } else if (answer !== "" && answer !== levels[currentLevel].correctAnswer) {
-      if (hp === 0) {
-        return;
+      console.log(hp);
+      if (hp === 1) {
+        console.log("redirect");
+        navigate("/game/lose");
       }
       setHp(hp - 1);
     }

@@ -4,6 +4,7 @@ import { StoreProvider } from "./common/store.context";
 import Game from "./pages/Game";
 import StartMenu from "./pages/StartMenu";
 import GameOptions from "./pages/GameOptions";
+import GameLose from "./pages/GameLose";
 
 function App() {
   if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/" element={<StartMenu />} />
             <Route path="/game" element={<Game />} />
-            <Route path="/game/options" element={ <GameOptions /> } />
+            <Route path="/game/options" element={<GameOptions />} />
+            <Route path="/game/lose" element={<GameLose />} />
           </Routes>
         </StoreProvider>
       </div>

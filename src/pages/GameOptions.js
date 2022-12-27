@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../components/Button';
 import coffeeImage from '../images/coffee.png';
 import EndButton from '../components/EndButton';
 import NewGameButton from '../components/NewGameButton';
