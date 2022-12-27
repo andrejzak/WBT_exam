@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../components/Button";
 import DifficultySettings from "../components/DifficultySettings";
 import goldMapImage from "../images/gold_map.png";
+import StartGameButton from "../components/StartGameButton";
 
 function StartMenu() {
   return (
@@ -17,7 +18,7 @@ function StartMenu() {
       <main className="pb-4">
         <div className="grid gap-9 justify-center">
           <DifficultySettings/>
-          <Button name="Začať hru" path={'/game'} styles='green-button'/>
+          <StartGameButton />
         </div>
       </main>
     </div>

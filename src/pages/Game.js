@@ -1,31 +1,11 @@
 import React, { useEffect, useState } from "react";
-import shuffleList from "shuffle-list";
-import easyGameSetup from "./../data/easy.json";
-import hardGameSetup from "./../data/hard.json";
-import { DifficultyType, useStoreContext } from "./../common/store.context";
+import { useStoreContext } from "./../common/store.context";
 import Card from "../components/Card";
 import colorfulMapImage from "../images/colorful_map.png";
 import GameBar from "../components/GameBar";
 
-const shuffleLevels = (levels) => {
-  return shuffleList(levels);
-};
-
 const Game = () => {
-  const { difficulty, currentLevel, setCurrentLevel, levels, setLevels, hp, setHp, answer, setAnswer } = useStoreContext();
-  const [metadata, setMetadata] = useState({ data: easyGameSetup });
-
-  useEffect(() => {
-    if (difficulty === DifficultyType.Easy) {
-      setMetadata({ data: easyGameSetup });
-    } else if (difficulty === DifficultyType.Hard) {
-      setMetadata({ data: hardGameSetup });
-    }
-  }, [difficulty]);
-
-  useEffect(() => {
-    setLevels(shuffleLevels(metadata.data));
-  }, [metadata.data]);
+  const { currentLevel, setCurrentLevel, levels, hp, setHp, answer, setAnswer } = useStoreContext();
 
   useEffect(() => {
     checkAnswer(answer);
