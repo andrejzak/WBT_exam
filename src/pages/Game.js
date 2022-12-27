@@ -19,20 +19,22 @@ const Game = () => {
 
   const checkAnswer = (answer) => {
     if (answer !== "" && answer === levels[currentLevel].correctAnswer) {
+      if (currentLevel === (levels.length - 1)) {
+        navigate("/game/win");
+      }
       nextLevel();
     } else if (answer !== "" && answer !== levels[currentLevel].correctAnswer) {
-      console.log(hp);
       if (hp === 1) {
         console.log("redirect");
         navigate("/game/lose");
-      }
+      } 
       setHp(hp - 1);
     }
   };
 
   return (
-    <div className="flex flex-col items-center relative justify-center h-full pt-16">
-      <header className="py-4 items-start absolute top-0 left-0 w-full">
+    <div className="flex flex-col items-center">
+      <header className="py-4 items-start top-0 left-0 w-full pb-3">
         <GameBar />
       </header>
       <img

@@ -1,21 +1,21 @@
 import React from 'react';
 import EndButton from '../components/EndButton';
 import NewGameButton from '../components/NewGameButton';
-import sadEmojiImage from '../images/sad_emoji.png';
+import happyEmojiImage from '../images/happy_emoji.png';
 import { useStoreContext } from '../common/store.context';
 
-const GameLose = () => {
+const GameWin = () => {
   const { currentLevel, levels } = useStoreContext();
 
   return (
     <div className='flex flex-col gap-3 items-center justify-center h-full p-3'>
-      <h1 className='text-red-300 font-bold text-4xl'>Prehral si!</h1>
+      <h1 className='text-red-300 font-bold text-4xl'>Vyhral si!</h1>
       <p className='text-white font-bold text-lg'>Skóre: { currentLevel }/{ levels.length }</p>
-      <img className='w-2/4' src={sadEmojiImage} alt="Smuntý emotikon"/>
+      <img className='w-2/4' src={happyEmojiImage} alt="Usmiaty emotikon"/>
       <NewGameButton />
       <EndButton />
     </div>
   )
 }
 
-export default GameLose;
+export default GameWin;
