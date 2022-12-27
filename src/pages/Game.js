@@ -31,19 +31,17 @@ const Game = () => {
   };
 
   return (
-    <div>
-      <header className="py-4">
+    <div className="flex flex-col items-center relative justify-center h-full pt-16">
+      <header className="py-4 items-start absolute top-0 left-0 w-full">
         <GameBar />
-        <div className="flex justify-center">
-          <img
-            className="w-11/12 max-w-xl pt-4"
-            src={colorfulMapImage}
-            alt="Mapa sveta"
-          />
-        </div>
       </header>
+      <img
+        className="w-11/12 max-w-xl pb-4"
+        src={colorfulMapImage}
+        alt="Mapa sveta"
+      />
       {levels && <Card question={levels[currentLevel].question} options={levels[currentLevel].options} />}
-    </div>
+  </div>
   );
 };
 
