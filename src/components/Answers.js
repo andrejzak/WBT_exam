@@ -56,7 +56,7 @@ const Answers = ({ initOptions }) => {
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     className={snapshot.isDragging ? "bg-purple-300 text-white font-bold rounded-md flex items-center justify-center w-60 h-14"
-                      : "bg-blue-400 hover:bg-purple-300 text-white font-bold mb-5 rounded-md flex items-center justify-center w-60 h-14"}
+                      : "bg-blue-400 hover:bg-purple-300 transform hover:translate-x-1 duration-75 ease-in text-white font-bold mb-5 rounded-md flex items-center justify-center w-60 h-14"}
                   >
                     {item}
                   </div>
