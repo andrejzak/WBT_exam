@@ -12,7 +12,7 @@ function App() {
   
   return (
     <div className=" grid justify-items-center min-h-screen bg-gradient-to-b from-slate-50 to-slate-400">
-      <div className="max-w-4xl w-screen bg-blue-900">
+      <div className="max-w-4xl w-screen bg-cyan">
         <StoreProvider>
           <Routes>
             <Route path="/" element={<StartMenu />} />

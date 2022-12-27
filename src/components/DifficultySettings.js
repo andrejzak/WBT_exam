@@ -11,8 +11,8 @@ const DifficultySettings = () => {
         onMouseUp={(e) => setDifficulty(DifficultyType.Easy)}
         className={
           difficulty === DifficultyType.Easy
-            ? "box-border border-2 border-red-600 w-36 difficulty-button font-bold cursor-pointer px-6 py-2 rounded-md text-white"
-            : "w-36 difficulty-button font-bold cursor-pointer px-6 py-2 rounded-md text-white"
+            ? "box-border border-2 border-red-600 blue-button"
+            : "blue-button"
         }
       >
         Ľahká
@@ -21,8 +21,8 @@ const DifficultySettings = () => {
         onMouseUp={() => setDifficulty(DifficultyType.Hard)}
         className={
           difficulty === DifficultyType.Hard
-            ? " box-border border-2 border-red-600 w-36 difficulty-button font-bold cursor-pointer px-6 py-2 rounded-md text-white"
-            : "w-36 difficulty-button font-bold cursor-pointer px-6 py-2 rounded-md text-white"
+            ? " box-border border-2 border-red-600 blue-button"
+            : "blue-button"
         }
       >
         Ťažká

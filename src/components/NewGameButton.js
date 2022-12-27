@@ -17,7 +17,7 @@ const NewGameButton = () => {
     <Link
       to="/"
       onClick={resetGameHandler}
-      className="text-center w-36 start-button font-bold cursor-pointer border-none px-6 py-2 rounded-md text-white"
+      className="blue-button"
     >
       Nová hra
     </Link>

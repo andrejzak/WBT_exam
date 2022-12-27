@@ -17,7 +17,7 @@ function StartMenu() {
       <main className="pb-4">
         <div className="grid gap-9 justify-center">
           <DifficultySettings/>
-          <Button name="Začať hru" path={'/game'} />
+          <Button name="Začať hru" path={'/game'} styles='green-button'/>
         </div>
       </main>
     </div>

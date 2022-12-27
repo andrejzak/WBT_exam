@@ -13,7 +13,7 @@ const GameOptions = () => {
           alt='Obrázok kávy'
         />       
        <div className='grid gap-6 justify-center'>
-          <Button path="/game" name="Pokračovať" />
+          <Button path="/game" name="Pokračovať" styles="blue-button" />
           <NewGameButton />
           <EndButton />
         </div>
