@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useStoreContext } from "./../common/store.context";
+import React, { useEffect } from "react";
+import { useStoreContext, AnswerMessageType } from "./../common/store.context";
 import Card from "../components/Card";
 import colorfulMapImage from "../images/colorful_map.png";
 import GameBar from "../components/GameBar";
 import { useNavigate } from "react-router-dom";
 
 const Game = () => {
-  const { currentLevel, setCurrentLevel, levels, hp, setHp, answer, setAnswer } = useStoreContext();
+  const { currentLevel, setCurrentLevel, levels, hp, setHp, answer, setAnswer, setIsTimerActive } = useStoreContext();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,18 +17,45 @@ const Game = () => {
     setCurrentLevel(currentLevel + 1);
   };
 
+  const messageHandler = (messageType) => {
+    let messageElement = document.getElementById(messageType);
+    let optionArea = document.getElementById("optionArea");
+    let answerArea = document.getElementById("answerArea");
+    answerArea.className = "bg-purple-300 text-white font-bold rounded-md flex items-center justify-center w-60 h-14"
+    optionArea.className = "invisible";
+    if (messageType === AnswerMessageType.Correct) {
+      messageElement.className = "bg-green-600 bg-opacity-60 answer-message";
+    } else {
+      messageElement.className = "bg-red-500 bg-opacity-70 answer-message";
+    }
+    setIsTimerActive(true);
+    setTimeout(function () { 
+      if (messageType === AnswerMessageType.Correct) {
+        if (currentLevel === (levels.length - 1)) {
+          navigate("/game/win");
+        }
+        nextLevel();
+      } else {
+        if (hp === 1) {
+          navigate("/game/lose");
+        }
+      }
+      setIsTimerActive(false);
+      answerArea.className = "hidden";
+      messageElement.className = "hidden";
+      optionArea.className = "grid grid-flow-row h-[228px]";
+    }, 1000);
+  }
+
   const checkAnswer = (answer) => {
     if (answer !== "" && answer === levels[currentLevel].correctAnswer) {
-      if (currentLevel === (levels.length - 1)) {
-        navigate("/game/win");
-      }
-      nextLevel();
+      messageHandler(AnswerMessageType.Correct);      
     } else if (answer !== "" && answer !== levels[currentLevel].correctAnswer) {
-      if (hp === 1) {
-        console.log("redirect");
-        navigate("/game/lose");
-      } 
-      setHp(hp - 1);
+      messageHandler(AnswerMessageType.Incorrect);
+      if (hp > 1) {
+        setHp(hp - 1);
+      }
+      setAnswer("");
     }
   };
 

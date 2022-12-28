@@ -5,6 +5,11 @@ export const DifficultyType = {
   Hard: "hard",
 };
 
+export const AnswerMessageType = {
+  Correct: "correct",
+  Incorrect: "incorrect",
+};
+
 const StoreContext = createContext({
   difficulty: DifficultyType.Easy,
   setDifficulty: () => {},
@@ -18,8 +23,8 @@ const StoreContext = createContext({
   setHp: () => { },
   answer: '',
   setAnswer: () => { },
-  wasContinueClicked: 0,
-  setWasContinueClicked: () => {}
+  isTimerActive: false,
+  setIsTimerActive: () => {}
 });
 
 export const StoreProvider = ({ children }) => {
@@ -29,7 +34,7 @@ export const StoreProvider = ({ children }) => {
   const [levels, setLevels] = useState(0);
   const [hp, setHp] = useState(3);
   const [answer, setAnswer] = useState('');
-  const [wasContinueClicked, setWasContinueClicked] = useState(false);
+  const [isTimerActive, setIsTimerActive] = useState(false);
 
   return (
     <StoreContext.Provider
@@ -46,8 +51,8 @@ export const StoreProvider = ({ children }) => {
         setHp,
         answer,
         setAnswer,
-        wasContinueClicked,
-        setWasContinueClicked
+        isTimerActive,
+        setIsTimerActive
       }}
     >
       {children}

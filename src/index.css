@@ -25,4 +25,8 @@ code {
   .green-button {
     @apply bg-green-btn hover:bg-green-btn-hover active:drop-shadow-none active:translate-y-2px drop-shadow-my-green  text-center w-36 font-bold cursor-pointer px-6 py-2 rounded-md text-white box-border;
   }
+
+  .answer-message {
+    @apply flex items-center justify-center absolute h-14 w-60 text-white text-center font-bold top-[190px] rounded-lg my-0 left-0 right-0 mx-auto;
+  }
 }
