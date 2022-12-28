@@ -20,6 +20,9 @@ module.exports = {
       },
       translate: {
         '2px': '2px'
+      },
+      screens: {
+        'smallest': { 'raw': '(min-width: 420px)' }
       }
     },
   },

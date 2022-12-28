@@ -5,7 +5,7 @@ const DifficultySettings = () => {
   const { difficulty, setDifficulty } = useStoreContext();
 
   return (
-    <div className="grid gap-4">
+    <div className="grid gap-2">
       <h2 className="text-white font-bold">Vyber si obtiažnosť:</h2>
       <button
         onMouseUp={(e) => setDifficulty(DifficultyType.Easy)}

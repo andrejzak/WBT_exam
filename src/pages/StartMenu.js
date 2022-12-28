@@ -17,8 +17,11 @@ function StartMenu() {
       </header>
       <main className="pb-4">
         <div className="grid gap-9 justify-center">
-          <DifficultySettings/>
-          <StartGameButton />
+          <DifficultySettings />
+          <div className="flex flex-col gap-2">
+            <Button content="Pravidlá hry" path="/manual" styles="green-button" />
+            <StartGameButton />
+          </div>
         </div>
       </main>
     </div>

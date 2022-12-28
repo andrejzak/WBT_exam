@@ -29,4 +29,9 @@ code {
   .answer-message {
     @apply flex items-center justify-center absolute h-14 w-60 text-white text-center font-bold top-[190px] rounded-lg my-0 left-0 right-0 mx-auto;
   }
+
+  .icon-button {
+    @apply flex items-center hover:text-purple-200 justify-center text-white text-4xl w-10 h-10;
+
+  }
 }
