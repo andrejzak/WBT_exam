@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../components/Button";
 import DifficultySettings from "../components/DifficultySettings";
 import goldMapImage from "../images/gold_map.png";
 import StartGameButton from "../components/StartGameButton";
+import { useNavigate } from "react-router-dom";
+
 
 function StartMenu() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const gameState = window.localStorage.getItem('gameState');
+    if (gameState !== null) {
+      navigate("/game");
+    }
+  }, []);
+
   return (
     <div className="flex flex-col gap-5 items-center justify-center h-full p-3">
       <header className="flex justify-center relative py-4">
@@ -12,6 +23,7 @@ function StartMenu() {
           Capital quiz
         </h1>
         <img
+          width="w-11/12"
           className="w-11/12 max-w-2xl"
           src={goldMapImage}
           alt="Mapa sveta"

@@ -1,15 +1,15 @@
 import React from 'react';
-import easyGameSetup from "./../data/easy.json";
-import hardGameSetup from "./../data/hard.json";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Button from '../components/Button';
 import PrintManualButton from '../components/PrintManualButton';
+import easyGameSetup from "./../data/easy.json";
+import hardGameSetup from "./../data/hard.json";
 
 const GameManual = () => {
   return (
     <div className='p-4 relative pt-14'>
       <div className='absolute right-5 top-3'>
-        <div className='flex gap-2'>
+        <div className='flex gap-5'>
           <PrintManualButton />
           <Button content={<GiHamburgerMenu />} path="/" styles="icon-button" />
         </div>
@@ -41,27 +41,23 @@ const GameManual = () => {
             3. Správne odpovede:
           </h2>
           <div className='grid sm:grid-cols-2 sm:gap-x-6 gap-y-4 justify-items-center'>
-            <div className='max-w-xs'>
-              <h3 className='text-red-300 font-bold text-md pl-1 pb-1'>Ľahká obtiažnosť:</h3>
+            <div className='max-w-xs border-off'>
+              <h3 className='text-yellow-400 font-bold text-md pl-1 pb-1'>Ľahká obtiažnosť:</h3>
               {easyGameSetup.map((item, index) => 
-                <p className='text-white border-2 border-red-500 py-1 px-2' key={index} index={index}>
+                <p className='text-white border-b-2 border-blue-300 py-1 px-2' key={index} index={index}>
                   <span className='font-bold text-green-300'>Otázka:</span> {item.question}<br /><span className='font-bold text-green-300'>Odpoveď: </span>{item.correctAnswer}
                 </p>
               )}
             </div>
-            <div className='max-w-xs'>
-              <h3 className='text-red-300 font-bold text-md pl-1 pb-1'>Ťažká obtiažnosť:</h3>
+            <div className='max-w-xs border-off'>
+              <h3 className='text-yellow-400 font-bold text-md pl-1 pb-1'>Ťažká obtiažnosť:</h3>
               {hardGameSetup.map((item, index) => 
-                <p className='text-white border-2 border-red-500 py-1 px-2' key={index} index={index}>
+                <p className='text-white py-1 border-b-2 border-blue-300 px-2' key={index} index={index}>
                   <span className='font-bold text-green-300'>Otázka:</span> {item.question}<br /><span className='font-bold text-green-300'>Odpoveď: </span>{item.correctAnswer}
                 </p>
               )}
-            </div>
-          
+            </div> 
           </div>
-          <p className='text-white'>
-          </p>
-          {/* {console.log(easyGameSetup)} */}
         </main>
       </div>  
     </div>

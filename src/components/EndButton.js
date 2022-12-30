@@ -2,12 +2,12 @@ import React from 'react';
 
 const EndButton = () => {
   return (
-    <button
-      onMouseUp={() => {window.close()}}
+    <a
+      href="https://www.google.com/"
       className="blue-button"
     >
       Koniec
-    </button>
+    </a>
   );
 }
 

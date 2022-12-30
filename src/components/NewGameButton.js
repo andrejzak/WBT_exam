@@ -7,6 +7,7 @@ const NewGameButton = () => {
   const { setAnswer, setCurrentLevel, setHp, setDifficulty } = useStoreContext();
 
   const resetGameHandler = () => {
+    window.localStorage.clear();
     setDifficulty(DifficultyType.Easy);
     setAnswer('');
     setHp(3);

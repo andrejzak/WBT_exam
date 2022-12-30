@@ -11,7 +11,7 @@ const DifficultySettings = () => {
         onMouseUp={(e) => setDifficulty(DifficultyType.Easy)}
         className={
           difficulty === DifficultyType.Easy
-            ? "box-border border-2 border-red-600 blue-button"
+            ? "border-2 border-pink-400 blue-button"
             : "blue-button"
         }
       >
@@ -21,7 +21,7 @@ const DifficultySettings = () => {
         onMouseUp={() => setDifficulty(DifficultyType.Hard)}
         className={
           difficulty === DifficultyType.Hard
-            ? " box-border border-2 border-red-600 blue-button"
+            ? " box-border border-2 border-pink-400 blue-button"
             : "blue-button"
         }
       >

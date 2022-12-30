@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import EndButton from '../components/EndButton';
 import NewGameButton from '../components/NewGameButton';
 import happyEmojiImage from '../images/happy_emoji.png';
@@ -6,6 +6,10 @@ import { useStoreContext } from '../common/store.context';
 
 const GameWin = () => {
   const { currentLevel, levels } = useStoreContext();
+
+  useEffect(() => {
+    window.localStorage.clear();
+  }, []);
 
   return (
     <div className='flex flex-col gap-3 items-center justify-center h-full p-3'>

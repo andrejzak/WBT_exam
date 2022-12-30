@@ -34,4 +34,8 @@ code {
     @apply flex items-center hover:text-purple-200 justify-center text-white text-4xl w-10 h-10;
 
   }
+
+  .border-off>p:last-child {
+    @apply border-none;
+  }
 }

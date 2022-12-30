@@ -6,10 +6,34 @@ import GameBar from "../components/GameBar";
 import { useNavigate } from "react-router-dom";
 
 const Game = () => {
-  const { currentLevel, setCurrentLevel, levels, hp, setHp, answer, setAnswer, setIsTimerActive } = useStoreContext();
+  const { currentLevel, setCurrentLevel, levels, setLevels, hp, setHp, answer, setAnswer, setIsTimerActive } = useStoreContext();
   const navigate = useNavigate();
 
+  window.onunload = function () {
+    loadLocalStorageData();
+  };
+
+  const loadLocalStorageData = () => {
+    const gameState = window.localStorage.getItem('gameState');
+    if (gameState !== null) {
+      const saveData = JSON.parse(gameState)
+      setCurrentLevel(saveData.currentLevel);
+      setHp(saveData.hp);
+      setLevels(saveData.levels);
+    } 
+  }
+
   useEffect(() => {
+    loadLocalStorageData();
+  }, []);
+
+
+  useEffect(() => {
+    const gameState = window.localStorage.getItem('gameState'); 
+    if (currentLevel === 0 && (currentLevel === gameState.currentLevel)) {
+      window.localStorage.setItem("gameState",
+      JSON.stringify({ currentLevel: currentLevel, hp: hp, levels: levels}));  
+    }
     checkAnswer(answer);
   }, [answer]);
 
@@ -35,6 +59,8 @@ const Game = () => {
           navigate("/game/win");
         }
         nextLevel();
+        window.localStorage.setItem("gameState",
+        JSON.stringify({ currentLevel: currentLevel + 1, hp: hp, levels: levels}));    
       } else {
         if (hp === 1) {
           navigate("/game/lose");
@@ -52,10 +78,12 @@ const Game = () => {
       messageHandler(AnswerMessageType.Correct);      
     } else if (answer !== "" && answer !== levels[currentLevel].correctAnswer) {
       messageHandler(AnswerMessageType.Incorrect);
+      window.localStorage.setItem("gameState",
+      JSON.stringify({ currentLevel: currentLevel, hp: hp - 1, levels: levels}));    
       if (hp > 1) {
         setHp(hp - 1);
+        setAnswer("");
       }
-      setAnswer("");
     }
   };
 
@@ -64,11 +92,17 @@ const Game = () => {
       <header className="py-4 items-start top-0 left-0 w-full pb-3">
         <GameBar />
       </header>
-      <img
-        className="w-11/12 max-w-xl pb-4"
-        src={colorfulMapImage}
-        alt="Mapa sveta"
-      />
+      <div className="flex justify-center relative">
+        <h1 className="text-center font-bold text-white bg-teal-600 bg-opacity-70 py-2 rounded-md absolute text-4xl my-0 left-0 w-56 right-0 mx-auto top-16">
+          Capital quiz
+        </h1>
+        <img
+          width="w-11/12"
+          className="w-11/12 max-w-xl pb-4"
+          src={colorfulMapImage}
+          alt="Mapa sveta"
+        />
+      </div>
       {levels && <Card question={levels[currentLevel].question} options={levels[currentLevel].options} />}
   </div>
   );

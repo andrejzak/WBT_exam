@@ -17,12 +17,17 @@ const StartGameButton = () => {
   const { setLevels, difficulty } = useStoreContext();
 
   const startGameHandler = () => {
+    let tmp;
     if (difficulty === DifficultyType.Easy) {
-      setLevels(shuffleLevels(easyGameSetup));
+      tmp = shuffleLevels(easyGameSetup); 
+      setLevels(tmp);
     } else if (difficulty === DifficultyType.Hard) {
-      setLevels(shuffleLevels(hardGameSetup));
+      tmp = shuffleLevels(hardGameSetup); 
+      setLevels(shuffleLevels(tmp));
     }
-  }
+    window.localStorage.setItem("gameState",
+    JSON.stringify({ currentLevel: 0, hp: 3, levels: tmp }));  
+}
 
   return (
     <Link

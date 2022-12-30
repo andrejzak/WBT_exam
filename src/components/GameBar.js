@@ -7,13 +7,12 @@ import HintButton from './HintButton';
 function GameBar() {
   const { levels, currentLevel } = useStoreContext();
 
-
   return (
     <div className='grid grid-flow-col px-5'>
       <div>
         <LifeBar />
       </div>
-      <div className='flex justify-end gap-x-1 relative'>
+      <div className='flex justify-end gap-x-1 relative z-50'>
         <div className='flex flex-col justify-center items-center'>
           <p className='text-yellow-400 font-bold leading-none'>Level</p>
           <p className='text-yellow-400 font-bold leading-none'>{ currentLevel + 1 }/{ levels.length }</p>
@@ -22,7 +21,7 @@ function GameBar() {
         <GameOptionsButton />
         <div id="hintWindow" className='hidden absolute'>
           Správna odpoveď:<br />
-          {levels[currentLevel].correctAnswer}
+          {levels && levels[currentLevel].correctAnswer}
         </div>
       </div>
     </div>

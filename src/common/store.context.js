@@ -24,7 +24,7 @@ const StoreContext = createContext({
   answer: '',
   setAnswer: () => { },
   isTimerActive: false,
-  setIsTimerActive: () => {}
+  setIsTimerActive: () => { },
 });
 
 export const StoreProvider = ({ children }) => {
@@ -52,7 +52,7 @@ export const StoreProvider = ({ children }) => {
         answer,
         setAnswer,
         isTimerActive,
-        setIsTimerActive
+        setIsTimerActive,
       }}
     >
       {children}
