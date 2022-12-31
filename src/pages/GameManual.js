@@ -26,10 +26,10 @@ const GameManual = () => {
           </h2>
           <p className='text-white mb-5 pl-1 smallest:text-justify'>
             Na začiatku si hráč zvolí úroveň obtiažnosti pričom predvolená úroveň je ľahká. Po kliknutí na tlačidlo
-            'Začať hru' sa spustí prví level zvolenej úrovne. Na zvolenú otázku 
+            'Začať hru' sa spustí prvý level zvolenej úrovne. Na zvolenú otázku 
             hráč odpovie presunutím odpovede do vyznačeného políčka. Keď hráč odpovie správne, tak sa posúva do ďalšieho
-            levelu. Ak však hráč odpovie nesprávne, tak príde o jeden život. Kliknutím na ikonku 'pause' sa zobrazí menu 
-            umožňujúce reštart, pokračovanie a ukončenie hry.
+            levelu. Ak však hráč odpovie nesprávne, tak príde o jeden život. Kliknutím na ikonku žiarovky sa zobrazí správna odpoveď. 
+            Po kliknutím na ikonku 'pause' sa zobrazí menu umožňujúce reštart, pokračovanie a ukončenie hry.
           </p>
           <h2 className='text-red-300 font-bold text-2xl'>
             2. Cieľ hry: 
