@@ -30,8 +30,8 @@ const Answers = ({ initOptions }) => {
           <div
             {...provided.droppableProps}
             ref={provided.innerRef}
-            className={snapshot.isDraggingOver ? "flex text-white bg-blue-200 h-14 items-center justify-center align-middle border border-blue-400 rounded-md w-60 mb-4"
-              : "flex text-white h-14 items-center justify-center align-middle border border-blue-400 rounded-md w-60 mb-4"}
+            className={snapshot.isDraggingOver ? "flex text-white bg-blue-200 h-14 items-center justify-center align-middle border-2 border-blue-400 rounded-md w-60 mb-4"
+              : "flex text-white h-14 items-center justify-center align-middle border-2 border-dashed border-blue-300 rounded-md w-60 mb-4"}
           >
             <div
               ref={provided.innerRef}
@@ -64,8 +64,8 @@ const Answers = ({ initOptions }) => {
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    className={snapshot.isDragging ? "bg-purple-300 text-white font-bold rounded-md flex items-center justify-center w-60 h-14"
-                      : "bg-blue-400 hover:bg-purple-300 text-white font-bold mb-5 rounded-md flex items-center justify-center w-60 h-14"}
+                    className={snapshot.isDragging ? "bg-purple-300 text-white border-2 border-purple-300 font-bold rounded-md flex items-center justify-center w-60 h-14"
+                      : "bg-blue-400 text-white hover:bg-purple-300 border-2 hover:border-purple-300 border-blue-400 font-bold mb-5 rounded-md flex items-center justify-center w-60 h-14"}
                   >
                     {item}
                   </div>

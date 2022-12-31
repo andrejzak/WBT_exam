@@ -48,9 +48,11 @@ const Game = () => {
     answerArea.className = "bg-purple-300 text-white font-bold rounded-md flex items-center justify-center w-60 h-14"
     optionArea.className = "invisible";
     if (messageType === AnswerMessageType.Correct) {
-      messageElement.className = "bg-green-600 bg-opacity-60 answer-message";
+      messageElement.className = "bg-green-600 bg-opacity-80 answer-message";
+      navigator.vibrate(500);
     } else {
-      messageElement.className = "bg-red-500 bg-opacity-70 answer-message";
+      messageElement.className = "bg-red-500 bg-opacity-80 answer-message";
+      navigator.vibrate(100);
     }
     setIsTimerActive(true);
     setTimeout(function () { 
