@@ -50,6 +50,9 @@ const Game = () => {
     if (messageType === AnswerMessageType.Correct) {
       messageElement.className = "bg-green-600 bg-opacity-80 answer-message";
       navigator.vibrate(500);
+      document.getElementById("hintWindow").className = "hidden";
+      document.getElementById("showAnswerButton").className = "bg-lime-600 text-white rounded-md w-36 px-2 py-1 mt-1";
+      document.getElementById("answerText").className = "hidden";
     } else {
       messageElement.className = "bg-red-500 bg-opacity-80 answer-message";
       navigator.vibrate(100);

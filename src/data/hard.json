@@ -2,51 +2,61 @@
   {
     "options": ["Dakar", "Bagdad", "Banjul"],
     "question": "Hlavné mesto Iraku?",
-    "correctAnswer": "Bagdad"
+    "correctAnswer": "Bagdad",
+    "hint": ["Banjul", "Bagdad"]
   },
   {
     "options": ["Podgorica", "Tallinn", "Tirana"],
     "question": "Hlavné mesto  Čiernej Hory?",
-    "correctAnswer": "Podgorica"
+    "correctAnswer": "Podgorica",
+    "hint": ["Podgorica", "Tirana"]
   },
   {
     "options": ["Victoria", "Ulanbátar", "Nikózia"],
     "question": "Hlavné mesto Seychely?",
-    "correctAnswer": "Victoria"
+    "correctAnswer": "Victoria",
+    "hint": ["Victoria", "Ulanbátar"]
   },
   {
     "options": ["Hanoj", "Chartúm", "Maskat"],
     "question": "Hlavné mesto Ománu?",
-    "correctAnswer": "Maskat"
+    "correctAnswer": "Maskat",
+    "hint": ["Chartúm", "Maskat"]
   },
   {
     "options": ["Nikózia", "Port Luis", "Roseau"],
     "question": "Hlavné mesto Cyprusu?",
-    "correctAnswer": "Nikózia"
+    "correctAnswer": "Nikózia",
+    "hint": ["Port Luis", "Nikózia"]
   },
   {
     "options": ["Abuja", "Garapan", "Guatemala"],
     "question": "Hlavné mesto Nigérie?",
-    "correctAnswer": "Abuja"
+    "correctAnswer": "Abuja",
+    "hint": ["Garapan", "Abuja"]
   },
   {
     "options": ["San José", "Rabat", "Lima"],
     "question": "Hlavné mesto Peru?",
-    "correctAnswer": "Lima"
+    "correctAnswer": "Lima",
+    "hint": ["Lima", "Rabat"]
   },
   {
     "options": ["Male", "Moroni", "Ulanbátar"],
     "question": "Hlavné mesto Mongolska?",
-    "correctAnswer": "Ulanbátar"
+    "correctAnswer": "Ulanbátar",
+    "hint": ["Moroni", "Ulanbátar"]
   },
   {
     "options": ["Lusaka", "Garapan", "Dušanbe"],
     "question": "Hlavné mesto Zambie?",
-    "correctAnswer": "Lusaka"
+    "correctAnswer": "Lusaka",
+    "hint": ["Lusaka", "Garapan"]
   },
   {
     "options": ["Manila", "Jerevan", "Astana"],
     "question": "Hlavné mesto Kazachstanu?",
-    "correctAnswer": "Astana"
+    "correctAnswer": "Astana",
+    "hint": ["Astana", "Manila"]
   }
 ]

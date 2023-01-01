@@ -8,7 +8,8 @@ import hardGameSetup from "./../data/hard.json";
 const shuffleLevels = (levels) => {
   let tmp = [...levels];
   tmp.forEach(element => {
-    element.options = shuffleList(element.options)
+    element.options = shuffleList(element.options);
+    element.hint = shuffleList(element.hint);
   }); 
   return shuffleList(tmp);
 };

@@ -2,51 +2,62 @@
   {
     "options": ["Varšava", "Praha", "Berlín"],
     "question": "Hlavné mesto Polska?",
-    "correctAnswer": "Varšava"
+    "correctAnswer": "Varšava",
+    "hint": ["Praha", "Varšava"]
   },
   {
     "options": ["Berlín", "Budapešť", "Bratislava"],
     "question": "Hlavné mesto Nemecka?",
-    "correctAnswer": "Berlín"
+    "correctAnswer": "Berlín",
+    "hint": ["Berlín", "Budapešť"]
   },
   {
     "options": ["Helsinki", "Oslo", "Kyjev"],
     "question": "Hlavné mesto Fínska?",
-    "correctAnswer": "Helsinki"
+    "correctAnswer": "Helsinki",
+    "hint": ["Helsinki", "Oslo"]
   },
   {
     "options": ["Dublin", "Brusel", "Paríž"],
     "question": "Hlavné mesto Francúzska?",
-    "correctAnswer": "Paríž"
+    "correctAnswer": "Paríž",
+    "hint": ["Dublin", "Paríž"]
   },
   {
     "options": ["Londýn", "Kodaň", "Monako"],
     "question": "Hlavné mesto Dánska?",
-    "correctAnswer": "Kodaň"
+    "correctAnswer": "Kodaň",
+    "hint": ["Monako", "Kodaň"]
   },
   {
     "options": ["Dublin", "Rím", "Luxemburg"],
     "question": "Hlavné mesto Írska?",
-    "correctAnswer": "Dublin"
+    "correctAnswer": "Dublin",
+    "hint": ["Dublin", "Luxemburg"]
   },
   {
     "options": ["Barcelóna", "Lisabon", "Madrid"],
     "question": "Hlavné mesto Španielska?",
-    "correctAnswer": "Madrid"
+    "correctAnswer": "Madrid",
+    "hint": ["Barcelóna", "Madrid"]
   },
   {
     "options": ["San Maríno", "Skopje", "Belehrad"],
     "question": "Hlavné mesto Srbska?",
-    "correctAnswer": "Belehrad"
+    "correctAnswer": "Belehrad",
+    "hint": ["Skopje", "Belehrad"]
+
   },
   {
     "options": ["Atény", "Podgorica", "Vilnius"],
     "question": "Hlavné mesto Grécka?",
-    "correctAnswer": "Atény"
+    "correctAnswer": "Atény",
+    "hint": ["Atény", "Vilnius"]
   },
   {
     "options": ["Bern", "Štokholm", "Sofia"],
     "question": "Hlavné mesto Bulharska?",
-    "correctAnswer": "Sofia"
+    "correctAnswer": "Sofia",
+    "hint": ["Sofia", "Bern"]
   }
 ]

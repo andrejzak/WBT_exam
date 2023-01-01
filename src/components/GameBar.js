@@ -3,6 +3,7 @@ import LifeBar from './LifeBar';
 import GameOptionsButton from './GameOptionsButton';
 import { useStoreContext } from '../common/store.context';
 import HintButton from './HintButton';
+import HintWindow from './HintWindow';
 
 function GameBar() {
   const { levels, currentLevel } = useStoreContext();
@@ -19,10 +20,7 @@ function GameBar() {
         </div>
         <HintButton />
         <GameOptionsButton />
-        <div id="hintWindow" className='hidden absolute'>
-          Správna odpoveď:<br />
-          {levels && levels[currentLevel].correctAnswer}
-        </div>
+        <HintWindow />
       </div>
     </div>
   )

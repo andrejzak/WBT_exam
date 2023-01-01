@@ -9,10 +9,10 @@ const HintButton = () => {
   const hintWindowHandler = () => {
     if (isHintWindowDisplayed) {
       isHintWindowDisplayed = false;
-      document.getElementById("hintWindow").className = "hidden";  
+      document.getElementById("hintWindow").className = "hidden"; 
     } else {
       isHintWindowDisplayed = true;
-      document.getElementById("hintWindow").className = "absolute text-yellow-200 text-center text-sm top-12 w-36 bg-purple-600 bg-opacity-60 font-bold rounded-md py-2";
+      document.getElementById("hintWindow").className = "absolute grid justify-items-center text-yellow-200 text-center text-sm top-12 w-44 bg-purple-600 bg-opacity-90 font-bold rounded-md py-2";
     }
  };
 
@@ -21,7 +21,7 @@ const HintButton = () => {
  }, [currentLevel]);
 
   return (
-    <button onClick={hintWindowHandler} className='icon-button relative hover:animate-pulse'>
+    <button id="bulbButton" onClick={hintWindowHandler} className='icon-button relative'>
       <FaRegLightbulb />
     </button>
   )
