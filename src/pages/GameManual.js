@@ -43,19 +43,23 @@ const GameManual = () => {
           <div className='grid sm:grid-cols-2 sm:gap-x-6 gap-y-4 justify-items-center'>
             <div className='max-w-xs border-off'>
               <h3 className='text-yellow-400 font-bold text-md pl-1 pb-1'>Ľahká obtiažnosť:</h3>
-              {easyGameSetup.map((item, index) => 
-                <p className='text-white border-b-2 border-blue-300 py-1 px-2' key={index} index={index}>
-                  <span className='font-bold text-green-300'>Otázka:</span> {item.question}<br /><span className='font-bold text-green-300'>Odpoveď: </span>{item.correctAnswer}
-                </p>
-              )}
+              <ul>
+                {easyGameSetup.map((item, index) => 
+                  <li className='text-white border-b-2 border-blue-300 py-1 px-2' key={index}>
+                    <span className='font-bold text-green-300'>Otázka:</span> {item.question}<br /><span className='font-bold text-green-300'>Odpoveď: </span>{item.correctAnswer}
+                  </li>
+                )}
+              </ul> 
             </div>
             <div className='max-w-xs border-off'>
               <h3 className='text-yellow-400 font-bold text-md pl-1 pb-1'>Ťažká obtiažnosť:</h3>
-              {hardGameSetup.map((item, index) => 
-                <p className='text-white py-1 border-b-2 border-blue-300 px-2' key={index} index={index}>
-                  <span className='font-bold text-green-300'>Otázka:</span> {item.question}<br /><span className='font-bold text-green-300'>Odpoveď: </span>{item.correctAnswer}
-                </p>
-              )}
+              <ul>
+                {hardGameSetup.map((item, index) => 
+                  <li className='text-white py-1 border-b-2 border-blue-300 px-2' key={index}>
+                    <span className='font-bold text-green-300'>Otázka:</span> {item.question}<br /><span className='font-bold text-green-300'>Odpoveď: </span>{item.correctAnswer}
+                  </li>
+                )}
+              </ul>  
             </div> 
           </div>
         </main>

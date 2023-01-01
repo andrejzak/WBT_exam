@@ -23,7 +23,6 @@ function StartMenu() {
           Capital quiz
         </h1>
         <img
-          width="w-11/12"
           className="w-11/12 max-w-2xl"
           src={goldMapImage}
           alt="Mapa sveta"

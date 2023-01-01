@@ -102,7 +102,6 @@ const Game = () => {
           Capital quiz
         </h1>
         <img
-          width="w-11/12"
           className="w-11/12 max-w-[640px] pb-4"
           src={colorfulMapImage}
           alt="Mapa sveta"
