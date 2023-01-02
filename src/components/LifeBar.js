@@ -8,7 +8,7 @@ const LifeBar = () => {
   return (
     <ul className='flex flex-row'>
       {Array.from(Array(hp)).map((item, index) => (
-        <li key={index}><img className='w-10' src={HartImage} alt="srdce"/></li>  
+        <li key={index}><img className='w-10 text-center' width="40" height="40" src={HartImage} alt="srdce"/></li>  
       ))}
     </ul>
   );

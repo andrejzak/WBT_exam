@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useStoreContext, AnswerMessageType } from "./../common/store.context";
 import Card from "../components/Card";
 import colorfulMapImage from "../images/colorful_map.png";
@@ -13,20 +13,25 @@ const Game = () => {
     loadLocalStorageData();
   };
 
-  const loadLocalStorageData = () => {
-    const gameState = window.localStorage.getItem('gameState');
-    if (gameState !== null) {
-      const saveData = JSON.parse(gameState)
-      setCurrentLevel(saveData.currentLevel);
-      setHp(saveData.hp);
-      setLevels(saveData.levels);
-    } 
-  }
+  const loadLocalStorageData = useCallback(
+    () => {
+      const gameState = window.localStorage.getItem('gameState');
+      if (gameState !== null) {
+        const saveData = JSON.parse(gameState)
+        setCurrentLevel(saveData.currentLevel);
+        setHp(saveData.hp);
+        setLevels(saveData.levels);
+      }
+    },
+    [setCurrentLevel, setHp, setLevels]
+  );
 
   useEffect(() => {
+    if (!levels) {
+      navigate("/");
+    }
     loadLocalStorageData();
-  }, []);
-
+  }, [loadLocalStorageData]);
 
   useEffect(() => {
     const gameState = window.localStorage.getItem('gameState'); 
@@ -97,15 +102,17 @@ const Game = () => {
       <header className="py-4 items-start top-0 left-0 w-full pb-3">
         <GameBar />
       </header>
-      <div className="flex justify-center relative">
-        <h1 className="text-center font-bold text-white bg-teal-600 bg-opacity-70 py-2 rounded-md absolute text-4xl my-0 left-0 w-56 right-0 mx-auto top-16">
+      <div className="flex justify-center relative min-h-[130px] min-w-[224px]">
+        <h1 className="text-center font-bold text-white bg-teal-600 bg-opacity-80 py-2 rounded-md absolute text-4xl my-0 left-0 w-56 right-0 mx-auto top-16">
           Capital quiz
         </h1>
         <img
-          className="w-11/12 max-w-[640px] pb-4"
-          src={colorfulMapImage}
-          alt="Mapa sveta"
-        />
+            height="130"
+            width="224"
+            className="text-center w-11/12 max-w-[640px] pb-4"
+            src={colorfulMapImage}
+            alt="Mapa sveta"
+          />
       </div>
       {levels && <Card question={levels[currentLevel].question} options={levels[currentLevel].options} />}
   </div>

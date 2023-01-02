@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { StoreProvider } from "./common/store.context";
 import Game from "./pages/Game";
 import StartMenu from "./pages/StartMenu";
@@ -14,12 +14,13 @@ function App() {
       <div className="max-w-4xl w-screen bg-cyan">
         <StoreProvider>
           <Routes>
-            <Route path="/" element={<StartMenu />} />
+            <Route index path="/" element={<StartMenu />} />
             <Route path="/game" element={<Game />} />
             <Route path="/game/options" element={<GameOptions />} />
             <Route path="/game/lose" element={<GameLose />} />
             <Route path="/game/win" element={<GameWin />} />
             <Route path="/manual" element={<GameManual />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </StoreProvider>
       </div>
