@@ -1,4 +1,4 @@
-Zadanie bolo vypracované za pomoci Kataríny Vertaľovej (ais id: 111483).
+Zadanie bolo vypracované za pomoci Kataríny Vertaľovej.
 Zadanie je robené vo frameworku React. Keďže na to aby sme rozbehali React 
 aplikáciu na školskom serveri nemáme práva preto na školský server prikladáme 
 rovnaký súbor ako tu do MS Teams:
